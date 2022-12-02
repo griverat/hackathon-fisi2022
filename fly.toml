@@ -37,6 +37,3 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
-
-[deploy]
-  release_command = "python manage.py migrate"
