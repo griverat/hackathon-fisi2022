@@ -1,0 +1,10 @@
+# flyctl launch added from .gitignore
+**/test
+**/sent_emails
+**/*sqlite3
+**/.venv
+**/__pycache__
+
+# flyctl launch added from .venv/.gitignore
+# created by virtualenv automatically
+.venv/**/*
