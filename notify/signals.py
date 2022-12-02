@@ -1,5 +1,6 @@
 from django.core.mail import send_mail
 from django.db.models.signals import m2m_changed
+
 from main.models import Announcement, UserProfile
 
 
