@@ -1,0 +1,48 @@
+{% extends "header.html" %}
+
+{% load account socialaccount %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<!--Login-->
+<div class="container py-5">
+    <h1>Sign in</h1>
+    
+    {% get_providers as socialaccount_providers %}
+
+    {% if socialaccount_providers %}
+    <p>Please sign in with one
+    of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+    for a {{ site_name }} account and sign in below:</p>
+
+    <div class="socialaccount_ballot">
+
+    <ul class="socialaccount_providers">
+        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+    </ul>
+
+    <div class="login-or">or</div>
+
+    </div>
+
+    {% include "socialaccount/snippets/login_extra.html" %}
+
+    {% else %}
+    <p>If you have not created an account yet, then please
+    <a href="{{ signup_url }}">sign up</a> first.</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    <p class="text-center">Don't have an account? <a href="{% url 'account_signup' %}">Create an account</a>.</p>
+    <p class="text-center"><a href="{% url 'account_reset_password' %}">Forgot your password?</a></p>
+</div>
+
+{% endblock %}

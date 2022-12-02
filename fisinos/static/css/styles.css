@@ -1,0 +1,35 @@
+body {
+    font-family: "Montserrat";
+}
+
+.navbar {
+    min-width: 100%;
+    padding: 8px 10%;
+    /* max-height: 4.5rem; */
+}
+
+.navbar-brand {
+    font-family: "Orbitron";
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.main-body {
+    padding: 0 10%;
+    background-color: #f5f5f5;
+    min-height: 80vh;
+    min-width: 80%;
+}
+
+.container-fluid {
+    padding: 0;
+}
